@@ -5,6 +5,7 @@
   "dependencies": {
     "@firebase/app": "^0.6.10",
     "@firebase/database": "^0.6.11",
+    "@firebase/storage": "^0.3.42",
     "@react-firebase/database": "^0.3.11",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

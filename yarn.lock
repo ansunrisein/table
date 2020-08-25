@@ -1854,7 +1854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@firebase/storage@npm:0.3.42":
+"@firebase/storage@npm:0.3.42, @firebase/storage@npm:^0.3.42":
   version: 0.3.42
   resolution: "@firebase/storage@npm:0.3.42"
   dependencies:
