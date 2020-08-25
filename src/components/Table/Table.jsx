@@ -11,9 +11,7 @@ export const Table = () => {
 
     return (
         <FirebaseDatabaseNode path={path} orderByKey>{d => (
-            d.isLoading
-                ? <span>Load...</span>
-                : <AntTable dataSource={d.value && s(d.value)} columns={columns}/>
+            <AntTable loading={d.isLoading} dataSource={d.value && s(d.value)} columns={columns}/>
         )}</FirebaseDatabaseNode>
     )
 }
