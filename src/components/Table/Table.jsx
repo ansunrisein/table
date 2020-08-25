@@ -30,7 +30,7 @@ const columns = [
         dataIndex: 'image',
         key: 'image',
         width: '20%',
-        render:  (url) => <img className={styles.image} src={url} alt=""/>
+        render: (url) => <img className={styles.image} src={url} alt=""/>
     },
     {
         title: 'Brand',
