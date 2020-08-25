@@ -10076,6 +10076,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^3.1.12":
+  version: 3.1.12
+  resolution: "nanoid@npm:3.1.12"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: dc51417babadca4b00c2126ac0bc1c01e842e3c40edda2d3e1da40e8aae4d691a2a0b9d8e9c3a8cdb16133345a47f9135f0d0eef85a66ad31711ad3d908050e4
+  languageName: node
+  linkType: hard
+
 "nanomatch@npm:^1.2.9":
   version: 1.2.13
   resolution: "nanomatch@npm:1.2.13"
@@ -14668,12 +14677,14 @@ resolve@1.15.0:
   dependencies:
     "@firebase/app": ^0.6.10
     "@firebase/database": ^0.6.11
+    "@firebase/storage": ^0.3.42
     "@react-firebase/database": ^0.3.11
     "@testing-library/jest-dom": ^4.2.4
     "@testing-library/react": ^9.3.2
     "@testing-library/user-event": ^7.1.2
     antd: ^4.6.1
     firebase: ^7.19.0
+    nanoid: ^3.1.12
     react: ^16.13.1
     react-dom: ^16.13.1
     react-hook-form: ^6.5.3
