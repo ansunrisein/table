@@ -12888,6 +12888,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^6.5.3":
+  version: 6.5.3
+  resolution: "react-hook-form@npm:6.5.3"
+  peerDependencies:
+    react: ^16.8.0
+  checksum: dc44e04db584088389a5a5e7fa304bf14acc720e00d4fd4d6ae16ab00a74a4b3ed9384f132a65e2c01b0a358b2d97c8c266bfae006cff05e58b1541381c3af9e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.12.0, react-is@npm:^16.7.0, react-is@npm:^16.8.1, react-is@npm:^16.8.4":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -14667,6 +14676,7 @@ resolve@1.15.0:
     firebase: ^7.19.0
     react: ^16.13.1
     react-dom: ^16.13.1
+    react-hook-form: ^6.5.3
     react-scripts: 3.4.3
   languageName: unknown
   linkType: soft
