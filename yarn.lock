@@ -2234,6 +2234,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-firebase/auth@npm:^0.2.10":
+  version: 0.2.10
+  resolution: "@react-firebase/auth@npm:0.2.10"
+  dependencies:
+    lodash.get: ^4.4.2
+    render-and-add-props: ^0.5.0
+  peerDependencies:
+    firebase: ">=4"
+  checksum: 7628fda0ae74f807235cbca1e2a2346b68d53f483f21ba54fd27b2e655072ab58bb16f01cbf4b896d973d52e49ddbd0aeadfcb6dd2d0c4b5f51a8fd8de8e4387
+  languageName: node
+  linkType: hard
+
 "@react-firebase/database@npm:^0.3.11":
   version: 0.3.11
   resolution: "@react-firebase/database@npm:0.3.11"
@@ -9461,6 +9473,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lodash.get@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "lodash.get@npm:4.4.2"
+  checksum: 447e575e3caa5131ef44e5a0c135b1614f3c937d86b3be0568f9da7b0fd015010af3b6b4e41edf6e2698c9ce2dcc061ca71b31f274f799c991dceb018be16e4f
+  languageName: node
+  linkType: hard
+
 "lodash.memoize@npm:^4.1.2":
   version: 4.1.2
   resolution: "lodash.memoize@npm:4.1.2"
@@ -14678,12 +14697,14 @@ resolve@1.15.0:
     "@firebase/app": ^0.6.10
     "@firebase/database": ^0.6.11
     "@firebase/storage": ^0.3.42
+    "@react-firebase/auth": ^0.2.10
     "@react-firebase/database": ^0.3.11
     "@testing-library/jest-dom": ^4.2.4
     "@testing-library/react": ^9.3.2
     "@testing-library/user-event": ^7.1.2
     antd: ^4.6.1
     firebase: ^7.19.0
+    lodash: ^4.17.20
     nanoid: ^3.1.12
     react: ^16.13.1
     react-dom: ^16.13.1
