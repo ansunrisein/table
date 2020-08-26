@@ -19,16 +19,16 @@ export const Table = () => {
 
 const columns = [
     {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name'
-    },
-    {
         title: 'Image',
         dataIndex: 'image',
         key: 'image',
         width: '20%',
         render: (url) => <img className={styles.image} src={url} alt="Product"/>
+    },
+    {
+        title: 'Name',
+        dataIndex: 'name',
+        key: 'name'
     },
     {
         title: 'Brand',

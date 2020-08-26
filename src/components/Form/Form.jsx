@@ -21,8 +21,8 @@ export const Form = () => {
         <FirebaseDatabaseMutation type="push" path="ScentHunt/products">{
             ({runMutation}) => (
                 <form onSubmit={handleSubmit(runMutation)} className={styles.form}>
-                    <Input style={style} placeholder="name" name="name" ref={registerAntdInput}/>
                     <ImageField register={register} style={style}/>
+                    <Input style={style} placeholder="name" name="name" ref={registerAntdInput}/>
                     <Input style={style} placeholder="brand" name="brand" ref={registerAntdInput}/>
                     <Input style={style} placeholder="price" name="price" ref={registerAntdInput}/>
                     <Input style={style} placeholder="uniq" name="uniq" ref={registerAntdInput}/>
