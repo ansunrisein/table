@@ -7,7 +7,7 @@ import {ImageField} from './ImageField'
 
 
 const style = {
-    width: '200px'
+    width: '10vw'
 }
 
 export const Form = () => {
