@@ -8,7 +8,7 @@ export const columns = [
         dataIndex: 'image',
         key: 'image',
         width: '20%',
-        render: url => <Cell horizontal image={url} rating={567} size="big"/>
+        render: url => <Cell horizontal image={url} rating="567" size="big"/>
     },
     {
         title: () => <Title text="Name" sort="desc"/>,
