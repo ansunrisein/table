@@ -1,6 +1,7 @@
 import React from 'react'
 import {FirebaseDatabaseNode} from '@react-firebase/database'
 import {Table as AntTable} from 'antd'
+import {columns} from './columns'
 import styles from './Table.module.css'
 
 
@@ -15,44 +16,3 @@ export const Table = () => {
         )}</FirebaseDatabaseNode>
     )
 }
-
-
-const columns = [
-    {
-        title: 'Image',
-        dataIndex: 'image',
-        key: 'image',
-        width: '20%',
-        render: (url) => <img className={styles.image} src={url} alt="Product"/>
-    },
-    {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name'
-    },
-    {
-        title: 'Brand',
-        dataIndex: 'brand',
-        key: 'brand'
-    },
-    {
-        title: 'Price',
-        dataIndex: 'price',
-        key: 'price'
-    },
-    {
-        title: 'Uniq',
-        dataIndex: 'uniq',
-        key: 'uniq'
-    },
-    {
-        title: 'Long',
-        dataIndex: 'long',
-        key: 'long'
-    },
-    {
-        title: 'Ingredient',
-        dataIndex: 'ingredient',
-        key: 'ingredient'
-    }
-]
