@@ -12,7 +12,7 @@ export const Table = () => {
 
     return (
         <FirebaseDatabaseNode path={path} orderByKey>{d => (
-            <AntTable loading={d.isLoading} dataSource={d.value && s(d.value)} columns={columns}/>
+            <AntTable loading={d.isLoading} dataSource={d.value && s(d.value)} columns={columns} className={styles.table}/>
         )}</FirebaseDatabaseNode>
     )
 }
