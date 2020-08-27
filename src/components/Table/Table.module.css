@@ -88,6 +88,16 @@
 }
 
 
+.pointer {
+    cursor: pointer;
+}
+
+
+.selection {
+    user-select: none;
+}
+
+
 .title {
     border-bottom: 1px solid transparent;
 }
