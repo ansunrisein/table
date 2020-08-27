@@ -29,13 +29,13 @@ export const columns = [
         render: price => <Cell rating="25" size="big" text={price}/>
     },
     {
-        title: () => <Title text="Uniq" sort="none"/>,
+        title: () => <Title text="Uniqueness" sort="none"/>,
         dataIndex: 'uniq',
         key: 'uniq',
         render: uniq => <Cell rating="25" size="big" text={uniq}/>
     },
     {
-        title: () => <Title text="Long" sort="none"/>,
+        title: () => <Title text="Longevity" sort="none"/>,
         dataIndex: 'long',
         key: 'long',
         render: long => <Cell rating="25" size="big" text={long}/>
