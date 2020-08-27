@@ -105,3 +105,14 @@
 .title:hover {
     border-color: gray;
 }
+
+
+.defaultButton {
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+
+    background: transparent;
+
+    border: 0;
+}
