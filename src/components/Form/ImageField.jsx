@@ -1,6 +1,6 @@
 import React, {useMemo, useState} from 'react'
 import PropTypes from 'prop-types'
-import firebase from 'firebase'
+import * as firebase from 'firebase'
 import {nanoid} from 'nanoid'
 
 
