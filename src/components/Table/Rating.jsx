@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
+import {inc} from 'ramda'
 import {UpSquareFilled} from '@ant-design/icons'
 import c from 'classnames'
 import {Flex} from 'reflexbox'
 import styles from './Table.module.css'
-import {inc} from 'ramda'
 
 
 export const Rating = ({size, vertical, rating, larger}) => {
@@ -12,7 +12,11 @@ export const Rating = ({size, vertical, rating, larger}) => {
 
     return (
         <Flex flexDirection={vertical && 'column'} alignItems="center">
-            <UpSquareFilled className={c(size === 'big' ? styles.big : styles.tiny, styles.pointer)} onClick={() => setRate(inc)}/>
+            <button className={styles.defaultButton}>
+                <UpSquareFilled className={c(size === 'big' ? styles.big : styles.tiny, styles.pointer)}
+                                onClick={() => setRate(inc)}
+                />
+            </button>
             <span className={c(styles.bold, larger ? styles.larger : styles.xlarge, styles.selection)}>{rate}</span>
         </Flex>
     )
