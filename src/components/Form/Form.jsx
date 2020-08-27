@@ -3,7 +3,7 @@ import {useForm} from 'react-hook-form'
 import {FirebaseDatabaseMutation} from '@react-firebase/database'
 import {Button, Input} from 'antd'
 import styles from './Form.module.css'
-import {ImageField} from '../ImageField'
+import {ImageField} from './ImageField'
 
 
 const style = {
