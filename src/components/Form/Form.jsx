@@ -25,9 +25,9 @@ export const Form = () => {
                     <Input style={style} placeholder="name" name="name" ref={registerAntdInput}/>
                     <Input style={style} placeholder="brand" name="brand" ref={registerAntdInput}/>
                     <Input style={style} placeholder="price" name="price" ref={registerAntdInput}/>
-                    <Input style={style} placeholder="uniq" name="uniq" ref={registerAntdInput}/>
-                    <Input style={style} placeholder="long" name="long" ref={registerAntdInput}/>
-                    <Input style={style} placeholder="ingredient" name="ingredient" ref={registerAntdInput}/>
+                    <Input style={style} placeholder="uniqueness" name="uniqueness" ref={registerAntdInput}/>
+                    <Input style={style} placeholder="longevity" name="longevity" ref={registerAntdInput}/>
+                    <Input multiple style={style} placeholder="ingredients" name="ingredients" ref={registerAntdInput}/>
                     <Button type="primary" htmlType="submit">
                         Add
                     </Button>
