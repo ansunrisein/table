@@ -1,6 +1,7 @@
 import React, {useMemo} from 'react'
 import PropTypes from 'prop-types'
 import {Flex} from 'reflexbox'
+import c from 'classnames'
 import {DownOutlined, UpOutlined} from '@ant-design/icons'
 import styles from './Table.module.css'
 
@@ -13,11 +14,15 @@ export const Title = ({text, sort, onClick}) => {
 
     return (
         <Flex justifyContent="center">
-            <Flex flexDirection="column" justifyContent={sort !== 'none' && 'center'} className={styles.icon}>
+            <Flex flexDirection="column"
+                  justifyContent={sort !== 'none' && 'center'}
+                  className={c(styles.icon, styles.pointer)}
+                  onClick={onClick}
+            >
                 {(sort === 'asc' || sort === 'none') && <UpOutlined style={style} color="red"/>}
                 {(sort === 'desc' || sort === 'none') && <DownOutlined style={style}/>}
             </Flex>
-            <span className={styles.uppercase}>{text}</span>
+            <span className={c(styles.uppercase, styles.pointer, styles.title)} onClick={onClick}>{text}</span>
         </Flex>
     )
 }
