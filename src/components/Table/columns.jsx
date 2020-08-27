@@ -44,6 +44,6 @@ export const columns = [
         title: () => <Title text="Ingredients" sort="none"/>,
         dataIndex: 'ingredient',
         key: 'ingredient',
-        render: ingredient => <Cell horizontal rating="25" size="small" text={ingredient}/>
+        render: ingredient => <Cell horizontal rating="25" size="tiny" text={ingredient}/>
     },
 ]
