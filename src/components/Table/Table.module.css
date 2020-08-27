@@ -23,8 +23,14 @@
     margin-right: 1rem;
     padding: 0.3rem;
 
-    border: 1px solid gray;
+    box-shadow: 0 0 2px gray;
     border-radius: 20%;
+
+    transition: all 200ms linear;
+}
+
+.image:hover {
+    box-shadow: 0 0 5px gray;
 }
 
 
@@ -79,4 +85,13 @@
 
 .xlarge {
     font-size: x-large;
+}
+
+
+.title {
+    border-bottom: 1px solid transparent;
+}
+
+.title:hover {
+    border-color: gray;
 }
