@@ -1,4 +1,74 @@
+.table {
+    margin-top: 3rem;
+    padding: 1rem;
+
+    box-shadow: 0 0 5px gray;
+}
+
+
 .image {
     display: flex;
-    height: 70px;
+
+    height: 6rem;
+    width: auto;
+
+    border: 1px solid gray;
+    padding: 0.1rem 0.3rem;
+
+    margin-right: 1rem;
+    border-radius: 20%;
+}
+
+
+.text {
+    color: gray;
+    font-size: x-large;
+    font-weight: lighter;
+}
+
+
+.margin {
+    margin-bottom: 0.5rem;
+}
+
+
+.icon > span:first-child + .icon > span:first-child {
+    margin-top: 2px;
+}
+
+
+.big > svg {
+    height: 2rem;
+    width: auto;
+}
+
+
+.tiny > svg {
+    height: 1rem;
+    width: auto;
+}
+
+
+.small {
+    font-size: small;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+
+.larger {
+    font-size: larger;
+}
+
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+.xlarge {
+    font-size: x-large;
 }
