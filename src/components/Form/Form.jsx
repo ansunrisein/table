@@ -2,7 +2,7 @@ import React from 'react'
 import {useForm} from 'react-hook-form'
 import {FirebaseDatabaseMutation} from '@react-firebase/database'
 import {Button, Input} from 'antd'
-import styles from './Form.module.css'
+import {Flex} from 'reflexbox'
 import {ImageField} from './ImageField'
 
 
@@ -20,7 +20,7 @@ export const Form = () => {
     return (
         <FirebaseDatabaseMutation type="push" path="ScentHunt/products">{
             ({runMutation}) => (
-                <form onSubmit={handleSubmit(runMutation)} className={styles.form}>
+                <Flex as="form" onSubmit={handleSubmit(runMutation)} justifyContent="space-between">
                     <ImageField register={register} style={style}/>
                     <Input style={style} placeholder="name" name="name" ref={registerAntdInput}/>
                     <Input style={style} placeholder="brand" name="brand" ref={registerAntdInput}/>
@@ -31,7 +31,7 @@ export const Form = () => {
                     <Button type="primary" htmlType="submit">
                         Add
                     </Button>
-                </form>
+                </Flex>
             )
         }</FirebaseDatabaseMutation>
     )
