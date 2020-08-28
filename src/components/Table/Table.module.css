@@ -99,17 +99,6 @@
 }
 
 
-.defaultButton {
-    cursor: pointer;
-    outline: none;
-    user-select: none;
-
-    background: transparent;
-
-    border: 0;
-}
-
-
 .head {
     padding: 1rem 0;
 }
