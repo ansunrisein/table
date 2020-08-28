@@ -94,13 +94,13 @@ export const createColumns = (filters, onClick, onMouseEnter, onMouseLeave) => {
         {
             title: (_, __, i) => <Title onClick={() => onClick?.('ingredients')} text="Ingredients"
                                 sort={findDirection('ingredients')}
-                                onMouseEnter={() => onMouseEnter({i, j: 5})}
+                                onMouseEnter={() => onMouseEnter({i, j: 6})}
                                 onMouseLeave={onMouseLeave}
             />,
             dataIndex: 'ingredients',
             key: 'ingredients',
             render: (ingredient, _, i) => <Cell horizontal reverse rating="25" size="tiny" text={ingredient}
-                                        onMouseEnter={() => onMouseEnter({i, j: 5})}
+                                        onMouseEnter={() => onMouseEnter({i, j: 6})}
                                         onMouseLeave={onMouseLeave}
             />
         },
