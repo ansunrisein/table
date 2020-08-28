@@ -1,10 +1,13 @@
 import React from 'react'
-import {Auth, Table, Form} from '../components'
+import {Auth, Form, Table} from '../components'
+import {FirebaseAuthConsumer} from '@react-firebase/auth'
 
 
 export const Catalog = () => (
     <>
-        <Form/>
+        <FirebaseAuthConsumer>{({isSignedIn}) => (
+            isSignedIn && <Form/>
+        )}</FirebaseAuthConsumer>
         <Table/>
         <Auth/>
     </>
