@@ -1,9 +1,9 @@
 import React, {useCallback, useMemo, useState} from 'react'
 import {ascend, descend, prop, sortWith} from 'ramda'
 import {Table as AntTable} from 'antd'
+import {withFirebaseDatabaseNode} from '../../hocs'
 import {createColumns} from './columns'
 import {TableContainer} from './TableContainer'
-import {withFirebaseDatabaseNode} from '../../hocs'
 
 
 const withDatabaseNode = withFirebaseDatabaseNode({path: "ScentHunt/products"})
