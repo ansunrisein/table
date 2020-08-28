@@ -6,8 +6,11 @@ import {Rating} from './Rating'
 import styles from './Table.module.css'
 
 
-export const Cell = ({text, horizontal, rating, size, reverse}) => (
-    <Flex flexDirection={horizontal ? 'row' : 'column'} alignItems="center" justifyContent="center">
+export const Cell = ({text, horizontal, rating, size, reverse, onMouseEnter, onMouseLeave}) => (
+    <Flex flexDirection={horizontal ? 'row' : 'column'} alignItems="center" justifyContent="center"
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+    >
         {text &&
         <span className={c(styles.medium, styles.gray, size === 'tiny' && styles.small)}>{text}</span>}
         <Rating rating={rating} size={size} reverse={reverse}/>
@@ -19,4 +22,7 @@ Rating.propTypes = {
     text: PropTypes.string,
     rating: PropTypes.string.isRequired,
     horizontal: PropTypes.bool,
+    reverse: PropTypes.bool,
+    onMouseEnter: PropTypes.func,
+    onMouseLeave: PropTypes.func
 }

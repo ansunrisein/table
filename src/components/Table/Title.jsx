@@ -21,7 +21,11 @@ export const Title = ({text, sort, onClick}) => {
                 {(sort === 'asc' || sort === 'none') && <UpOutlined style={style}/>}
                 {(sort === 'desc' || sort === 'none') && <DownOutlined style={style}/>}
             </Flex>
-            <span className={c(styles.uppercase, styles.pointer, styles.title, styles.bold)} onClick={onClick}>{text}</span>
+            <span className={c(styles.uppercase, styles.pointer, styles.title, styles.bold)}
+                  onClick={onClick}
+            >
+                {text}
+            </span>
         </Flex>
     )
 }

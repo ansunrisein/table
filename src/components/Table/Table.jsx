@@ -3,7 +3,7 @@ import {FirebaseDatabaseNode} from '@react-firebase/database'
 import {ascend, descend, prop, sortWith} from 'ramda'
 import {Table as AntTable} from 'antd'
 import {createColumns} from './columns'
-import './ant-table.css'
+import {TableContainer} from './TableContainer'
 
 
 export const Table = () => {
@@ -11,6 +11,7 @@ export const Table = () => {
 
     const [filters, setFilters] = useState([])
     const [data, setData] = useState({})
+    const [hover, setHover] = useState(null)
 
     const onClick = useCallback(name => setFilters(filters => {
             const filter = filters.find(e => e.name === name)
@@ -25,7 +26,9 @@ export const Table = () => {
         }), [setFilters]
     )
 
-    const columns = useMemo(() => createColumns(filters, onClick), [filters, onClick])
+    const columns = useMemo(() => (
+        createColumns(filters, onClick, setHover, () => setHover(null))
+    ), [filters, onClick, setHover, hover])
 
     const sortedDate = useMemo(() => !data.isLoading && data.value && sortData(s(data.value), filters), [data, filters])
 
@@ -35,12 +38,13 @@ export const Table = () => {
                 setData(d)
                 return null
             }}</FirebaseDatabaseNode>
-            <AntTable loading={data.isLoading}
-                      dataSource={data.value && sortedDate}
-                      columns={columns}
-                      className="table"
-                      rowKey={e => 'key' + e.id}
-            />
+            <TableContainer hovered={hover}>
+                <AntTable loading={data.isLoading}
+                          dataSource={data.value && sortedDate}
+                          columns={columns}
+                          rowKey={e => 'key' + e.id}
+                />
+            </TableContainer>
         </>
 
     )
