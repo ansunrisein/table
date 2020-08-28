@@ -3,7 +3,7 @@ import {FirebaseDatabaseNode} from '@react-firebase/database'
 import {ascend, descend, prop, sortWith} from 'ramda'
 import {Table as AntTable} from 'antd'
 import {createColumns} from './columns'
-import styles from './Table.module.css'
+import './ant-table.css'
 
 
 export const Table = () => {
@@ -38,7 +38,7 @@ export const Table = () => {
             <AntTable loading={data.isLoading}
                       dataSource={data.value && sortedDate}
                       columns={columns}
-                      className={styles.table}
+                      className="table"
             />
         </>
 
