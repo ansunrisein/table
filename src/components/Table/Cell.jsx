@@ -6,7 +6,7 @@ import {Rating} from './Rating'
 import styles from './Table.module.css'
 
 
-export const Cell = ({text, image, horizontal, rating, size}) => (
+export const Cell = ({text, horizontal, rating, size, reverse}) => (
     <Flex flexDirection={horizontal ? 'row' : 'column'} alignItems="center" justifyContent="center">
         {text &&
         <span className={c(styles.medium, styles.gray, size === 'tiny' && styles.small)}>{text}</span>}
@@ -17,7 +17,6 @@ export const Cell = ({text, image, horizontal, rating, size}) => (
 Rating.propTypes = {
     size: PropTypes.oneOf(['tiny', 'medium', 'big']).isRequired,
     text: PropTypes.string,
-    image: PropTypes.string,
     rating: PropTypes.string.isRequired,
     horizontal: PropTypes.bool,
 }
