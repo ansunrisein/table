@@ -1,38 +1,29 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
-import {FirebaseDatabaseMutation} from '@react-firebase/database'
-import {Button, Input} from 'antd'
+import {Button} from 'antd'
 import {Flex} from 'reflexbox'
 import {ImageField} from './ImageField'
+import {withFirebaseDatabaseMutation} from '../../hocs'
 
 
-const style = {
-    width: '10vw'
-}
+const withProductsMutation = withFirebaseDatabaseMutation({type: "push", path: "ScentHunt/products"})
 
-export const Form = () => {
+
+export const Form = withProductsMutation(({runMutation}) => {
     const {register, handleSubmit} = useForm({shouldUnregister: true})
 
-    const registerAntdInput = ({input}) => register({
-        required: true,
-    })(input)
-
     return (
-        <FirebaseDatabaseMutation type="push" path="ScentHunt/products">{
-            ({runMutation}) => (
-                <Flex as="form" onSubmit={handleSubmit(runMutation)} justifyContent="space-between">
-                    <ImageField register={register} style={style}/>
-                    <Input style={style} placeholder="name" name="name" ref={registerAntdInput}/>
-                    <Input style={style} placeholder="brand" name="brand" ref={registerAntdInput}/>
-                    <Input style={style} placeholder="price" name="price" ref={registerAntdInput}/>
-                    <Input style={style} placeholder="uniqueness" name="uniqueness" ref={registerAntdInput}/>
-                    <Input style={style} placeholder="longevity" name="longevity" ref={registerAntdInput}/>
-                    <Input multiple style={style} placeholder="ingredients" name="ingredients" ref={registerAntdInput}/>
-                    <Button type="primary" htmlType="submit">
-                        Add
-                    </Button>
-                </Flex>
-            )
-        }</FirebaseDatabaseMutation>
+        <Flex as="form" onSubmit={handleSubmit(runMutation)} justifyContent="space-between">
+            <ImageField register={register}/>
+            <input placeholder="name" name="name" ref={register}/>
+            <input placeholder="brand" name="brand" ref={register}/>
+            <input placeholder="price" name="price" ref={register}/>
+            <input placeholder="uniqueness" name="uniqueness" ref={register}/>
+            <input placeholder="longevity" name="longevity" ref={register}/>
+            <input placeholder="ingredients" name="ingredients" ref={register}/>
+            <Button type="primary" htmlType="submit">
+                Add
+            </Button>
+        </Flex>
     )
-}
+})

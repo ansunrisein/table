@@ -1,16 +1,16 @@
 import React, {useCallback, useMemo, useState} from 'react'
-import {FirebaseDatabaseNode} from '@react-firebase/database'
 import {ascend, descend, prop, sortWith} from 'ramda'
 import {Table as AntTable} from 'antd'
 import {createColumns} from './columns'
 import {TableContainer} from './TableContainer'
+import {withFirebaseDatabaseNode} from '../../hocs'
 
 
-export const Table = () => {
-    const path = 'ScentHunt/products'
+const withDatabaseNode = withFirebaseDatabaseNode({path: "ScentHunt/products"})
 
+
+export const Table = withDatabaseNode(({isLoading, value}) => {
     const [filters, setFilters] = useState([])
-    const [data, setData] = useState({})
     const [hover, setHover] = useState(null)
 
     const onClick = useCallback(name => setFilters(filters => {
@@ -30,25 +30,18 @@ export const Table = () => {
         createColumns(filters, onClick, setHover, () => setHover(null))
     ), [filters, onClick, setHover, hover])
 
-    const sortedDate = useMemo(() => !data.isLoading && data.value && sortData(s(data.value), filters), [data, filters])
+    const sortedDate = useMemo(() => !isLoading && value && sortData(s(value), filters), [isLoading, value, filters])
 
     return (
-        <>
-            <FirebaseDatabaseNode path={path} orderByChild="brand">{d => {
-                setData(d)
-                return null
-            }}</FirebaseDatabaseNode>
-            <TableContainer hovered={hover}>
-                <AntTable loading={data.isLoading}
-                          dataSource={data.value && sortedDate}
-                          columns={columns}
-                          rowKey={e => 'key' + e.id}
-                />
-            </TableContainer>
-        </>
-
+        <TableContainer hovered={hover}>
+            <AntTable loading={isLoading}
+                      dataSource={value && sortedDate}
+                      columns={columns}
+                      rowKey={e => 'key' + e.id}
+            />
+        </TableContainer>
     )
-}
+})
 
 const s = obj => Object.keys(obj).reduce((acc, key) => [...acc, {id: key, ...obj[key]}], [])
 
