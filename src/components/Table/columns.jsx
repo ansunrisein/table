@@ -1,6 +1,10 @@
 import React from 'react'
 import {Title} from './Title'
 import {Cell} from './Cell'
+import styles from './Table.module.css'
+import {Flex} from 'reflexbox'
+
+
 
 export const createColumns = (filters, onClick) => {
     const findDirection = name => filters.find(e => e.name === name)?.direction || 'none'
@@ -10,8 +14,14 @@ export const createColumns = (filters, onClick) => {
             title: () => <Title onClick={() => onClick?.('image')} text="Image" sort={findDirection('image')}/>,
             dataIndex: 'image',
             key: 'image',
-            width: '20%',
-            render: url => <Cell horizontal image={url} rating="567" size="big" sort={findDirection('image')}/>
+            render: url => (
+                <Flex marginTop="0.5rem">
+                    <div className={styles.image}>
+                        <div role="img" style={{backgroundImage: `url(${url})`}} className={styles.background}/>
+                    </div>
+                    <Cell rating="567" size="big" text="#12327" sort={findDirection('image')}/>
+                </Flex>
+            )
         },
         {
             title: () => <Title onClick={() => onClick?.('name')} text="Name" sort={findDirection('name')}/>,
@@ -32,7 +42,8 @@ export const createColumns = (filters, onClick) => {
             render: price => <Cell rating="25" size="big" text={price}/>
         },
         {
-            title: () => <Title onClick={() => onClick?.('uniqueness')} text="Uniqueness" sort={findDirection('uniqueness')}/>,
+            title: () => <Title onClick={() => onClick?.('uniqueness')} text="Uniqueness"
+                                sort={findDirection('uniqueness')}/>,
             dataIndex: 'uniqueness',
             key: 'uniqueness',
             render: uniq => <Cell rating="25" size="big" text={uniq}/>
@@ -44,10 +55,11 @@ export const createColumns = (filters, onClick) => {
             render: long => <Cell rating="25" size="big" text={long}/>
         },
         {
-            title: () => <Title onClick={() => onClick?.('ingredients')} text="Ingredients" sort={findDirection('ingredients')}/>,
+            title: () => <Title onClick={() => onClick?.('ingredients')} text="Ingredients"
+                                sort={findDirection('ingredients')}/>,
             dataIndex: 'ingredients',
             key: 'ingredients',
-            render: ingredient => <Cell horizontal rating="25" size="tiny" text={ingredient}/>
+            render: ingredient => <Cell horizontal reverse rating="25" size="tiny" text={ingredient}/>
         },
     ])
 }

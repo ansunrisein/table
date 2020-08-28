@@ -9,27 +9,27 @@
 
 
 .image {
-    height: 7rem;
-    width: 6rem;
+    height: 5rem;
+    width: 4rem;
 
-    margin-right: 1rem;
+    margin: 0 0.5rem 0 1.5rem;
     padding: 0.3rem;
-
-    box-shadow: 0 0 2px gray;
-    border-radius: 20%;
 
     transition: all 200ms linear;
 }
 
 .image:hover {
-    box-shadow: 0 0 5px gray;
+    opacity: 0.8;
 }
 
 
-.text {
-    color: gray;
-    font-size: x-large;
-    font-weight: lighter;
+.medium {
+    font-size: medium;
+}
+
+
+.gray {
+    color: #343B47;
 }
 
 
@@ -44,7 +44,7 @@
 
 
 .big > svg {
-    height: 2rem;
+    height: 1rem;
     width: auto;
 }
 
@@ -107,4 +107,9 @@
     background: transparent;
 
     border: 0;
+}
+
+
+.head {
+    padding: 1rem 0;
 }

@@ -9,20 +9,19 @@ import styles from './Table.module.css'
 export const Title = ({text, sort, onClick}) => {
     const style = useMemo(() => ({
         height: sort === 'none' ? '0.5em' : '1em',
-        color: sort === 'asc' ? 'green' : sort === 'desc' ? 'red' : 'gray'
     }), [sort])
 
     return (
-        <Flex justifyContent="center">
+        <Flex justifyContent="center" className={styles.head}>
             <Flex flexDirection="column"
                   justifyContent={sort !== 'none' && 'center'}
                   className={c(styles.icon, styles.pointer)}
                   onClick={onClick}
             >
-                {(sort === 'asc' || sort === 'none') && <UpOutlined style={style} color="red"/>}
+                {(sort === 'asc' || sort === 'none') && <UpOutlined style={style}/>}
                 {(sort === 'desc' || sort === 'none') && <DownOutlined style={style}/>}
             </Flex>
-            <span className={c(styles.uppercase, styles.pointer, styles.title)} onClick={onClick}>{text}</span>
+            <span className={c(styles.uppercase, styles.pointer, styles.title, styles.bold)} onClick={onClick}>{text}</span>
         </Flex>
     )
 }

@@ -9,13 +9,8 @@ import styles from './Table.module.css'
 export const Cell = ({text, image, horizontal, rating, size}) => (
     <Flex flexDirection={horizontal ? 'row' : 'column'} alignItems="center" justifyContent="center">
         {text &&
-        <span className={c(styles.text, !horizontal && styles.margin, size === 'tiny' && styles.larger)}>{text}</span>}
-        {image && (
-            <div className={styles.image}>
-                <div role="img" style={{backgroundImage: `url(${image})`}} className={styles.background}/>
-            </div>
-        )}
-        <Rating rating={rating} size={size} vertical={!!image} larger={!!image || size === 'tiny'}/>
+        <span className={c(styles.medium, styles.gray, size === 'tiny' && styles.small)}>{text}</span>}
+        <Rating rating={rating} size={size} reverse={reverse}/>
     </Flex>
 )
 
