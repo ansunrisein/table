@@ -39,6 +39,7 @@ export const Table = () => {
                       dataSource={data.value && sortedDate}
                       columns={columns}
                       className="table"
+                      rowKey={e => 'key' + e.id}
             />
         </>
 
