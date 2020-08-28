@@ -1,0 +1,16 @@
+.table {
+    margin-top: 3rem;
+
+    box-shadow: 0 0 5px gray;
+}
+
+
+.table td {
+    padding: 0 !important;
+}
+
+
+.table th {
+    padding: 0 !important;
+    background: #ebf5f8 !important;
+}
