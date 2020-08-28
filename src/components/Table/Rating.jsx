@@ -12,7 +12,7 @@ export const Rating = ({size, reverse, rating}) => {
 
     return (
         <Flex flexDirection={reverse ? 'row-reverse' : 'row'} alignItems="center">
-            <button className={styles.defaultButton}>
+            <button>
                 <UpSquareFilled className={c(size === 'big' ? styles.big : styles.tiny, styles.pointer)}
                                 onClick={() => setRate(inc)}
                 />
