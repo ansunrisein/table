@@ -1,7 +1,5 @@
-.table {
-    margin-top: 3rem;
-
-    box-shadow: 0 0 5px gray;
+.table tr > td {
+    border: 0 !important;
 }
 
 
