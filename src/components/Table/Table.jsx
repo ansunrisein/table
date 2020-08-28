@@ -16,7 +16,7 @@ export const Table = () => {
             const filter = filters.find(e => e.name === name)
 
             if (!filter)
-                return filters.concat({name, direction: nextSort('none')})
+                return filters.concat({name, direction: nextSort()})
 
             return filters.map(e => e.name !== name ? e : ({
                 name,
@@ -54,7 +54,7 @@ const nextSort = currentSort => {
             return 'desc'
         case 'desc':
             return 'none'
-        case 'none':
+        default:
             return 'asc'
     }
 }
