@@ -1,8 +1,8 @@
 import React from 'react'
 import firebase from 'firebase'
 import {FirebaseAuthProvider} from '@react-firebase/auth'
+import {ArrowDownOutlined} from '@ant-design/icons'
 import {config} from '../../config'
-import {Button} from 'antd'
 import styles from './Auth.module.css'
 
 
@@ -10,12 +10,15 @@ export const Auth = () => {
     return (
         <FirebaseAuthProvider {...config} firebase={firebase}>
             <div className={styles.container}>
-                <Button onClick={() => {
+                <button className={styles.button} onClick={() => {
                     const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
                     firebase.auth().signInWithPopup(googleAuthProvider)
                 }}>
-                    Sign In with Google
-                </Button>
+                    <span className={styles.text}>
+                        Login
+                        <ArrowDownOutlined style={{marginTop: '4px'}}/>
+                    </span>
+                </button>
             </div>
         </FirebaseAuthProvider>
     )

@@ -1,6 +1,36 @@
 .container {
     display: flex;
-    justify-content: center;
 
-    padding-top: 5vh;
+    position: fixed;
+    top: 60vh;
+    right: 0;
+
+    width: 2vw;
+
+    z-index: 9999;
+}
+
+
+.button {
+    width: 100%;
+    height: 100%;
+
+    background: #a4b8c6;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
+    padding: 0.5rem 0.4rem;
+}
+
+
+.text {
+    display: flex;
+    align-items: flex-end;
+
+    color: #3F5065;
+
+    writing-mode: vertical-rl;
+
+    font-size: large;
+    line-height: 1.3;
 }
