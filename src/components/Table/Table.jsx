@@ -27,7 +27,7 @@ export const Table = () => {
 
     const columns = useMemo(() => createColumns(filters, onClick), [filters, onClick])
 
-    const sortedDate = useMemo(() => !data.isLoading && data.value && sortData(s(data.value), filters), [data, filters, sortData])
+    const sortedDate = useMemo(() => !data.isLoading && data.value && sortData(s(data.value), filters), [data, filters])
 
     return (
         <>
