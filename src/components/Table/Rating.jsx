@@ -17,7 +17,7 @@ export const Rating = ({size, reverse, rating}) => {
                                 onClick={() => setRate(inc)}
                 />
             </button>
-            <span className={c(styles.bold, styles.selection)}>{rate}</span>
+            <span className={c(styles.bold, styles.selection, styles.gray)}>{rate}</span>
         </Flex>
     )
 }
