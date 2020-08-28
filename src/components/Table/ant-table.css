@@ -10,5 +10,15 @@
 
 .table th {
     padding: 0 !important;
-    background: #ebf5f8 !important;
+    background: #EBF5F8 !important;
+    width: 14.2%;
+}
+
+
+.ant-table-tbody tr:nth-child(2n) {
+    background: #EBF5F8;
+}
+
+.ant-table-tbody tr:nth-child(2n):hover > td {
+    background: #EBF5F8 !important;
 }
