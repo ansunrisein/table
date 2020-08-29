@@ -1,0 +1,61 @@
+.input {
+    width: 150px;
+}
+
+
+.container {
+    background: #D4E1E5;
+    padding: 1rem;
+}
+
+
+.name {
+    font-weight: 600;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+
+.button {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.logo {
+    margin-bottom: 1rem;
+}
+
+
+.disclaimer {
+    margin-bottom: 1rem;
+}
+
+
+.label {
+    cursor: pointer;
+}
+
+
+.file {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.upload {
+    padding: 0.1rem 0.8rem;
+    border-radius: 10px;
+
+    background: linear-gradient(180deg, #FFFFFF 0%, #D7E6E8 100%);
+}
+
+
+.upload_container {
+    width: 170px;
+    padding: 0.4rem 0.2rem 0.2rem 0.4rem;
+
+    border-radius: 10px;
+    background: #FFFFFF;
+}
