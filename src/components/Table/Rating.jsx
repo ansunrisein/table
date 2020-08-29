@@ -7,11 +7,11 @@ import {Flex} from 'reflexbox'
 import styles from './Table.module.css'
 
 
-export const Rating = ({size, reverse, rating}) => {
+export const Rating = ({size, rating}) => {
     const [rate, setRate] = useState(rating)
 
     return (
-        <Flex flexDirection={reverse ? 'row-reverse' : 'row'} alignItems="center">
+        <Flex alignItems="center">
             <button>
                 <UpSquareFilled className={c(size === 'big' ? styles.big : styles.tiny, styles.pointer)}
                                 onClick={() => setRate(inc)}

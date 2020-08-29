@@ -99,10 +99,12 @@ export const createColumns = (filters, onClick, onMouseEnter, onMouseLeave) => {
             />,
             dataIndex: 'ingredients',
             key: 'ingredients',
-            render: (ingredient, _, i) => <Cell horizontal reverse rating="25" size="tiny" text={ingredient}
+            render: (ingredients, _, i) => <Cell horizontal rating="25" size="tiny"
                                         onMouseEnter={() => onMouseEnter({i, j: 6})}
                                         onMouseLeave={onMouseLeave}
-            />
+            >
+                <span className={styles.ingredients}>{ingredients}</span>
+            </Cell>
         },
     ])
 }
