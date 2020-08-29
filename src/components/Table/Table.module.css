@@ -102,3 +102,10 @@
 .head {
     padding: 1rem 0;
 }
+
+
+.ingredients {
+    max-width: 2.5rem;
+    margin-left: 5px;
+    line-height: 1.15;
+}
