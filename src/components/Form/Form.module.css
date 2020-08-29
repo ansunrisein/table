@@ -59,3 +59,14 @@
     border-radius: 10px;
     background: #FFFFFF;
 }
+
+
+.close {
+    position: absolute;
+    left: 1.5rem;
+}
+
+
+.relative {
+    position: relative;
+}
