@@ -22,3 +22,15 @@ button {
 
   border: 0;
 }
+
+
+input {
+  background: transparent;
+
+  border: 0;
+}
+
+
+*:focus {
+  outline: none;
+}
