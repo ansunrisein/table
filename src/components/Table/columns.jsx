@@ -1,7 +1,6 @@
 import React from 'react'
 import {Flex} from 'reflexbox'
-import {Title} from './Title'
-import {Cell} from './Cell'
+import {Cell, Title} from '../../ui'
 import styles from './Table.module.css'
 
 

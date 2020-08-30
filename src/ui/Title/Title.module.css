@@ -1,0 +1,32 @@
+.head {
+    padding: 1rem 0;
+}
+
+
+.title {
+    border-bottom: 1px solid transparent;
+}
+
+.title:hover {
+    border-color: gray;
+}
+
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+.pointer {
+    cursor: pointer;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+
+.icon > span:first-child + .icon > span:first-child {
+    margin-top: 2px;
+}

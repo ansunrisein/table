@@ -1,0 +1,30 @@
+.bold {
+    font-weight: bold;
+}
+
+
+.gray {
+    color: #343B47;
+}
+
+
+.selection {
+    user-select: none;
+}
+
+
+.tiny > svg {
+    height: 1rem;
+    width: auto;
+}
+
+
+.big > svg {
+    height: 1rem;
+    width: auto;
+}
+
+
+.pointer {
+    cursor: pointer;
+}

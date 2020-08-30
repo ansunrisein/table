@@ -1,4 +1,7 @@
 export * from './Button'
+export * from './Cell'
 export * from './Disclaimer'
 export * from './Input'
 export * from './Logo'
+export * from './Rating'
+export * from './Title'

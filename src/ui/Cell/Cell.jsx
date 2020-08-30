@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Flex} from 'reflexbox'
 import c from 'classnames'
-import {Rating} from './Rating'
-import styles from './Table.module.css'
+import {Rating} from '../Rating'
+import styles from './Cell.module.css'
 
 
 export const Cell = ({text, horizontal, rating, size, children, onMouseEnter, onMouseLeave}) => (

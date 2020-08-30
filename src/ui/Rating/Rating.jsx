@@ -4,7 +4,7 @@ import {inc} from 'ramda'
 import {UpSquareFilled} from '@ant-design/icons'
 import c from 'classnames'
 import {Flex} from 'reflexbox'
-import styles from './Table.module.css'
+import styles from './Rating.module.css'
 
 
 export const Rating = ({size, rating}) => {

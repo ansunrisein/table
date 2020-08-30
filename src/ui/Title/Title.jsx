@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {Flex} from 'reflexbox'
 import c from 'classnames'
 import {DownOutlined, UpOutlined} from '@ant-design/icons'
-import styles from './Table.module.css'
+import styles from './Title.module.css'
 
 
 export const Title = ({text, sort, onClick}) => {
