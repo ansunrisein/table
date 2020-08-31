@@ -26,10 +26,10 @@ button {
 }
 
 
-input {
+input, textarea {
   background: transparent;
-
   border: 0;
+  resize: none;
 }
 
 
