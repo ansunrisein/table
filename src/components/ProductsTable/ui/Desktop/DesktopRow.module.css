@@ -1,0 +1,15 @@
+.image {
+    margin: 0 0.5rem 0 1.5rem;
+}
+
+
+.ingredients {
+    max-width: 2.5rem;
+    margin-left: 5px;
+    line-height: 1.15;
+}
+
+
+.hover:hover {
+    background: #e0e6eb;
+}
