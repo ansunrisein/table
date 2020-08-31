@@ -1,20 +1,19 @@
-import React, {useState} from 'react'
-import {FirebaseAuthConsumer} from '@react-firebase/auth'
-import {Auth, Form, Table} from '../components'
+import React, {useEffect, useState} from 'react'
+import {Auth, Form, ProductsTable} from '../components'
+import {withFirebaseAuthConsumer} from '../hocs'
 
 
-export const Catalog = () => {
+export const Catalog = withFirebaseAuthConsumer(({isSignedIn}) => {
     const [visible, setVisible] = useState(false)
     const [authed, setAuth] = useState(false)
 
+    useEffect(() => setAuth(isSignedIn), [setAuth, isSignedIn])
+
     return (
         <>
-            <FirebaseAuthConsumer>{({isSignedIn}) => {
-                setAuth(isSignedIn)
-                return isSignedIn && visible && <Form showForm={setVisible}/>
-            }}</FirebaseAuthConsumer>
-            <Table/>
+            {isSignedIn && visible && <Form showForm={setVisible}/>}
+            <ProductsTable/>
             <Auth showForm={setVisible} setAuth={setAuth} authed={authed}/>
         </>
     )
-}
+})
