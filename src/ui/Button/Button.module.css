@@ -9,3 +9,13 @@
     font-weight: bold;
     font-size: larger;
 }
+
+
+@media (max-width: 768px) {
+    .button {
+        padding: 0.6rem 0;
+        width: 100%;
+
+        border-radius: 5px;
+    }
+}

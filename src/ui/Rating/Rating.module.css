@@ -39,6 +39,13 @@
     .bold {
         font-size: smaller;
     }
+
+    .ellipsis {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 3rem;
+    }
 }
 
 
@@ -47,9 +54,6 @@
 }
 
 
-.ellipsis {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    max-width: 3rem;
+.margin {
+    margin-left: 5px;
 }
