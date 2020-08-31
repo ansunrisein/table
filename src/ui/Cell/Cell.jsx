@@ -6,14 +6,14 @@ import {Rating} from '../Rating'
 import styles from './Cell.module.css'
 
 
-export const Cell = ({text, horizontal, rating, size, children, onMouseEnter, onMouseLeave, hovered}) => (
+export const Cell = ({text, horizontal, rating, size, children, onMouseEnter, onMouseLeave, hovered, center}) => (
     <Flex flexDirection={horizontal ? 'row' : 'column'} alignItems="center" justifyContent="center"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
-          className={c(hovered && styles.hovered, styles.mobile)}
+          className={c(hovered && styles.hovered, !center && styles.mobile)}
     >
         {text &&
-        <span className={c(styles.medium, styles.gray, size === 'tiny' && styles.small)}>{text}</span>}
+        <span className={c(styles.medium, styles.gray, size === 'tiny' && styles.small, styles.ellipsis)}>{text}</span>}
         <Rating rating={rating} size={size}/>
         {children}
     </Flex>

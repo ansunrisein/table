@@ -18,8 +18,20 @@
 }
 
 
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 4rem;
+}
+
+
 @media (max-width: 768px) {
     .mobile {
         align-items: flex-start !important;
+    }
+
+    .medium {
+        font-size: small;
     }
 }

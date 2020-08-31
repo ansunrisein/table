@@ -25,6 +25,31 @@
 }
 
 
+@media (max-width: 768px) {
+    .tiny > svg {
+        height: 0.8rem;
+        width: auto;
+    }
+
+    .big > svg {
+        height: 0.8rem;
+        width: auto;
+    }
+
+    .bold {
+        font-size: smaller;
+    }
+}
+
+
 .pointer {
     cursor: pointer;
+}
+
+
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 3rem;
 }
