@@ -1,14 +1,20 @@
 import React, {useMemo, useState} from 'react'
 import {useMedia} from 'react-use'
 import {Pagination, Spin} from 'antd'
-import {TitleRow} from './TitleRow'
-import {DesktopRow} from './DesktopRow'
-import {usePagination} from './usePagination'
-import {useSort} from './useSort'
-import {MobileRow} from './MobileRow'
+import c from 'classnames'
+import {withFirebaseDatabaseNode} from '../../hocs'
+import {usePagination, useSort} from './hooks'
+import {s} from '../../utils'
+import {DesktopRow, MobileRow, TitleRow} from './ui'
 
 
-export const ProductsTable = ({data, columns, pageSize, loading}) => {
+const withDatabaseNode = withFirebaseDatabaseNode({path: 'ScentHunt/products'})
+
+const columns = ['image', 'name', 'brand', 'price', 'uniqueness', 'longevity', 'ingredients']
+const pageSize = 10
+
+export const ProductsTable = withDatabaseNode(({value, isLoading}) => {
+    const data = useMemo(() => value && s(value), [s, value])
     const {sortBy, sortedItems, sorts} = useSort(data || [])
     const {go, page, currentPage} = usePagination({data: sortedItems, pageSize})
     const [hover, setHover] = useState(null)
