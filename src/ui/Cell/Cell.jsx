@@ -6,10 +6,11 @@ import {Rating} from '../Rating'
 import styles from './Cell.module.css'
 
 
-export const Cell = ({text, horizontal, rating, size, children, onMouseEnter, onMouseLeave}) => (
+export const Cell = ({text, horizontal, rating, size, children, onMouseEnter, onMouseLeave, hovered}) => (
     <Flex flexDirection={horizontal ? 'row' : 'column'} alignItems="center" justifyContent="center"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
+          className={c(hovered && styles.hovered)}
     >
         {text &&
         <span className={c(styles.medium, styles.gray, size === 'tiny' && styles.small)}>{text}</span>}

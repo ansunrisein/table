@@ -11,3 +11,8 @@
 .small {
     font-size: small;
 }
+
+
+.hovered {
+    background: #e0e6eb;
+}
