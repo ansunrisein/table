@@ -1,5 +1,6 @@
 .height {
     min-height: 100vh;
+    padding-bottom: 3rem;
 }
 
 
@@ -10,5 +11,23 @@
 
     .padding {
         padding: 1rem;
+    }
+}
+
+
+.line li:nth-child(2n) {
+    background: #f6fafb;
+}
+
+
+.pagination {
+    margin: 1rem 1rem 1rem 0;
+    float: right;
+}
+
+
+@media (max-width: 768px) {
+    .pagination {
+        margin: 0 1rem 1rem 0;
     }
 }

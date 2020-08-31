@@ -2,10 +2,11 @@ import React, {useMemo, useState} from 'react'
 import {useMedia} from 'react-use'
 import {Pagination, Spin} from 'antd'
 import c from 'classnames'
+import {Flex} from 'reflexbox'
 import {withFirebaseDatabaseNode} from '../../hocs'
 import {usePagination, useSort} from './hooks'
 import {s} from '../../utils'
-import {DesktopRow, MobileRow, TitleRow} from './ui'
+import {DesktopRow, MobileRow, TitleDesktopRow, TitleMobileRow} from './ui'
 import styles from './ProductsTable.module.css'
 
 
@@ -22,15 +23,16 @@ export const ProductsTable = withDatabaseNode(({value, isLoading}) => {
 
     const isDesktop = useMedia('(min-width: 768px)')
     const Item = useMemo(() => (isDesktop ? DesktopRow : MobileRow), [isDesktop])
+    const Title = useMemo(() => (isDesktop ? TitleDesktopRow : TitleMobileRow), [isDesktop])
 
     return (
         <div className={c(styles.background, styles.height)}>
-            {/*<TitleRow columns={columns} onClick={sortBy} sorts={sorts} hovered={hover}/>*/}
+            <Title columns={columns} onClick={sortBy} sorts={sorts} hovered={hover}/>
             <div onMouseLeave={() => setHover(null)} className={styles.padding}>{
                 isLoading || !page
-                    ? <Spin/>
+                    ? <Flex justifyContent="center" alignItems="center" height="30vh"><Spin size="large"/></Flex>
                     : (
-                        <ul>
+                        <ul className={c(isDesktop && styles.line)}>
                             {page.map((datum) => (
                                 <li key={'key' + datum.id}>
                                     <Item data={datum} onElementHover={setHover}/>
@@ -39,7 +41,9 @@ export const ProductsTable = withDatabaseNode(({value, isLoading}) => {
                         </ul>
                     )
             }</div>
-            {/*<Pagination total={data?.length} current={currentPage} onChange={go}/>*/}
+            <div className={styles.pagination}>
+                <Pagination total={data?.length} current={currentPage} onChange={go}/>
+            </div>
         </div>
     )
 })
