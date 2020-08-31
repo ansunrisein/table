@@ -6,6 +6,7 @@ import {withFirebaseDatabaseNode} from '../../hocs'
 import {usePagination, useSort} from './hooks'
 import {s} from '../../utils'
 import {DesktopRow, MobileRow, TitleRow} from './ui'
+import styles from './ProductsTable.module.css'
 
 
 const withDatabaseNode = withFirebaseDatabaseNode({path: 'ScentHunt/products'})
@@ -23,22 +24,22 @@ export const ProductsTable = withDatabaseNode(({value, isLoading}) => {
     const Item = useMemo(() => (isDesktop ? DesktopRow : MobileRow), [isDesktop])
 
     return (
-        <div>
+        <div className={c(styles.background, styles.height)}>
             {/*<TitleRow columns={columns} onClick={sortBy} sorts={sorts} hovered={hover}/>*/}
-            <div onMouseLeave={() => setHover(null)}>{
-                loading || !page
-                ? <Spin/>
-                : (
-                    <ul>
-                        {page.map((datum) => (
-                            <li key={'key' + datum.id}>
-                                <Item data={datum} onElementHover={setHover}/>
-                            </li>
-                        ))}
-                    </ul>
-                )
+            <div onMouseLeave={() => setHover(null)} className={styles.padding}>{
+                isLoading || !page
+                    ? <Spin/>
+                    : (
+                        <ul>
+                            {page.map((datum) => (
+                                <li key={'key' + datum.id}>
+                                    <Item data={datum} onElementHover={setHover}/>
+                                </li>
+                            ))}
+                        </ul>
+                    )
             }</div>
             {/*<Pagination total={data?.length} current={currentPage} onChange={go}/>*/}
         </div>
     )
-}
+})
