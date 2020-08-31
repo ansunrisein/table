@@ -1,0 +1,1 @@
+export const s = obj => Object.keys(obj).reduce((acc, key) => [...acc, {id: key, ...obj[key]}], [])
