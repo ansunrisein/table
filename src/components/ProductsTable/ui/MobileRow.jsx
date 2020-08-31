@@ -1,40 +1,38 @@
 import React from 'react'
 import {Box, Flex} from 'reflexbox'
-import styles from '../Table/Table.module.css'
-import {Cell} from '../../ui/Cell'
+import {Cell, ImageDisplay} from '../../../ui'
+import styles from './MobileRow.module.css'
 
 
 export const MobileRow = ({data}) => (
-    <Flex alignItems="center">
-        <Flex minWidth="auto" flexWrap="nowrap" flexDirection="column">
-            <div className={styles.image}>
-                <div role="img" style={{backgroundImage: `url(${data.image})`}} className={styles.background}/>
-            </div>
-            <Cell rating="567" size="big" text="#12327"/>
+    <Flex alignItems="center" className={styles.card}>
+        <Flex minWidth="auto" flexWrap="nowrap" flexDirection="column" marginRight="1rem">
+            <ImageDisplay url={data.image}/>
+            <Cell rating="567" size="big" text="#12327" center/>
         </Flex>
         <Flex flex="1" justifyContent="center">
             <Flex flex="1" flexDirection="column">
-                <Box flex="1">
+                <Box flex="1" className={styles.item}>
                     <Cell text={data.name} rating="23"/>
                 </Box>
-                <Box flex="1">
+                <Box flex="1" className={styles.item}>
                     <Cell text={data.brand} rating="23"/>
                 </Box>
             </Flex>
         </Flex>
         <Box flex="1">
-            <Box flex="1">
+            <Box flex="1" className={styles.item}>
                 <Cell text={data.price} rating="23"/>
             </Box>
-            <Box flex="1">
+            <Box flex="1" className={styles.item}>
                 <Cell text={data.uniqueness} rating="23"/>
             </Box>
         </Box>
         <Box flex="1">
-            <Box flex="1">
+            <Box flex="1" className={styles.item}>
                 <Cell text={data.longevity} rating="23"/>
             </Box>
-            <Box flex="1">
+            <Box flex="1" className={styles.item}>
                 <Cell rating="23" text={data.ingredients}/>
             </Box>
         </Box>
