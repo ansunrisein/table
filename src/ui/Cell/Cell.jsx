@@ -10,7 +10,7 @@ export const Cell = ({text, horizontal, rating, size, children, onMouseEnter, on
     <Flex flexDirection={horizontal ? 'row' : 'column'} alignItems="center" justifyContent="center"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
-          className={c(hovered && styles.hovered)}
+          className={c(hovered && styles.hovered, styles.mobile)}
     >
         {text &&
         <span className={c(styles.medium, styles.gray, size === 'tiny' && styles.small)}>{text}</span>}

@@ -16,3 +16,10 @@
 .hovered {
     background: #e0e6eb;
 }
+
+
+@media (max-width: 768px) {
+    .mobile {
+        align-items: flex-start !important;
+    }
+}
