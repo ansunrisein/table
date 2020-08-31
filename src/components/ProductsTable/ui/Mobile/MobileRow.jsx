@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, Flex} from 'reflexbox'
-import {Cell, ImageDisplay} from '../../../ui'
+import {Cell, ImageDisplay} from '../../../../ui'
 import styles from './MobileRow.module.css'
 
 
