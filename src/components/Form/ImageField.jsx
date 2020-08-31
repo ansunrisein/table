@@ -21,7 +21,7 @@ export const ImageField = ({register}) => {
     }
 
     return (
-        <Flex justifyContent="flex-end" className={styles.upload_container}>
+        <Flex flex="1" justifyContent="flex-end" className={styles.upload_container}>
             <button className={styles.upload}>
                 <label className={styles.label} htmlFor="upload-photo">
                     Browse

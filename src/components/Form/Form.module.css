@@ -53,7 +53,6 @@
 
 
 .upload_container {
-    width: 170px;
     padding: 0.4rem 0.2rem 0.2rem 0.4rem;
 
     border-radius: 10px;
@@ -69,4 +68,40 @@
 
 .relative {
     position: relative;
+}
+
+
+.margin + .margin {
+    margin-left: 0.8rem;
+}
+
+
+@media (max-width: 768px) {
+    .logo {
+        margin-bottom: 0.1rem;
+    }
+
+    .mobile {
+        flex-direction: column !important;
+    }
+
+    .margin + .margin {
+        margin: 0;
+    }
+
+    .container {
+        height: 100vh;
+        justify-content: flex-start !important;
+    }
+
+    .textarea {
+        padding: 0.4rem;
+        border-radius: 10px;
+        background: #FFFFFF;
+    }
+
+    .parent > .child:not(:first-child)  {
+        margin-left: 0.4rem;
+    }
+
 }
