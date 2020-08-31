@@ -1,12 +1,12 @@
 import React, {useCallback, useMemo, useState} from 'react'
 import {ascend, descend, prop, sortWith} from 'ramda'
-import {Table as AntTable} from 'antd'
 import {withFirebaseDatabaseNode} from '../../hocs'
 import {createColumns} from './columns'
 import {TableContainer} from './TableContainer'
+import {ProductsTable} from '../ProductsTable'
 
 
-const withDatabaseNode = withFirebaseDatabaseNode({path: "ScentHunt/products"})
+const withDatabaseNode = withFirebaseDatabaseNode({path: 'ScentHunt/products'})
 
 
 export const Table = withDatabaseNode(({isLoading, value}) => {
@@ -34,10 +34,11 @@ export const Table = withDatabaseNode(({isLoading, value}) => {
 
     return (
         <TableContainer hovered={hover}>
-            <AntTable loading={isLoading}
-                      dataSource={value && sortedDate}
-                      columns={columns}
-                      rowKey={e => 'key' + e.id}
+            <ProductsTable loading={isLoading}
+                           data={value && sortedDate}
+                           columns={columns.map(e => e.key)}
+                           pageSize={10}
+                           rowKey={e => 'key' + e.id}
             />
         </TableContainer>
     )
