@@ -6,13 +6,13 @@ import {DownOutlined, UpOutlined} from '@ant-design/icons'
 import styles from './Title.module.css'
 
 
-export const Title = ({text, sort, onClick}) => {
+export const Title = ({text, sort, onClick, hovered}) => {
     const style = useMemo(() => ({
         height: sort === 'none' ? '0.5em' : '1em',
     }), [sort])
 
     return (
-        <Flex justifyContent="center" className={styles.head}>
+        <Flex justifyContent="center" className={c(styles.head, hovered && styles.hovered)}>
             <Flex flexDirection="column"
                   justifyContent={sort !== 'none' && 'center'}
                   className={c(styles.icon, styles.pointer)}

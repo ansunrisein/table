@@ -30,3 +30,9 @@
 .icon > span:first-child + .icon > span:first-child {
     margin-top: 2px;
 }
+
+
+.hovered {
+    font-weight: 900;
+    background: #e0e6eb;
+}
