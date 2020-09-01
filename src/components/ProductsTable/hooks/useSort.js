@@ -40,7 +40,9 @@ const nextSort = currentSort => {
 }
 
 const sortData = (data, filters) => sortWith(
-    filters.filter(e => e.direction !== 'none')
+    filters
+        .concat({name: 'new', direction: 'desc'})
+        .filter(e => e.direction !== 'none')
         .map(e => (e.direction === 'asc' ? ascend : descend)(prop(e.name))),
     data,
 )
