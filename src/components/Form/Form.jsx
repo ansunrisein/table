@@ -10,7 +10,7 @@ import {Button, Disclaimer, Input, Logo} from '../../ui'
 import styles from './Form.module.css'
 
 
-const withProductsMutation = withFirebaseDatabaseMutation({type: 'push', path: 'ScentHunt/products'})
+const withProductsMutation = withFirebaseDatabaseMutation({type: 'push', path: 'ScentHunt/newProducts'})
 
 
 export const Form = withProductsMutation(({runMutation, showForm}) => {
