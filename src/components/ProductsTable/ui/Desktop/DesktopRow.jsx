@@ -1,11 +1,12 @@
 import React from 'react'
 import {Flex} from 'reflexbox'
+import c from 'classnames'
 import {Cell, ImageDisplay} from '../../../../ui'
 import styles from './DesktopRow.module.css'
 
 
 export const DesktopRow = ({data, onElementHover}) => (
-    <Flex alignItems="stretch">
+    <Flex alignItems="stretch" className={c(data.new && styles.new)}>
         <Flex flex="1" justifyContent="center" alignItems="center" onMouseEnter={() => onElementHover?.('image')}
               className={styles.hover}
               padding="0.5rem 0"
