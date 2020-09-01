@@ -1,23 +1,34 @@
 import React, {useMemo, useState} from 'react'
 import {useMedia} from 'react-use'
-import {Pagination, Spin} from 'antd'
+import * as firebase from 'firebase'
+import {useList} from 'react-firebase-hooks/database'
+import {Button, Pagination, Spin} from 'antd'
 import c from 'classnames'
 import {Flex} from 'reflexbox'
-import {withFirebaseDatabaseNode} from '../../hocs'
 import {usePagination, useSort} from './hooks'
-import {s} from '../../utils'
+import {moveProduct, removeProduct, snapshotToList} from '../../utils'
 import {DesktopRow, MobileRow, TitleDesktopRow, TitleMobileRow} from './ui'
 import styles from './ProductsTable.module.css'
 
 
-const withDatabaseNode = withFirebaseDatabaseNode({path: 'ScentHunt/products'})
-
 const columns = ['image', 'name', 'brand', 'price', 'uniqueness', 'longevity', 'ingredients']
 const pageSize = 10
 
-export const ProductsTable = withDatabaseNode(({value, isLoading}) => {
-    const data = useMemo(() => value && s(value), [s, value])
-    const {sortBy, sortedItems, sorts} = useSort(data || [])
+export const ProductsTable = () => {
+    const productsRef = useMemo(() => firebase.database().ref('ScentHunt/products'), [])
+    const newProductsRef = useMemo(() => firebase.database().ref('ScentHunt/newProducts'), [])
+
+    const [newProducts, isNewProductsLoading, error] = useList(newProductsRef)
+    const [products, isProductsLoading] = useList(productsRef)
+    const data = useMemo(() => snapshotToList(products), [products])
+    const newData = useMemo(() => snapshotToList(newProducts), [newProducts])
+
+    const allProducts = useMemo(
+        () => [...(data || []).map(e => ({...e, new: 0})), ...(newData || []).map(e => ({...e, new: 1}))].reverse(),
+        [newData, data]
+    )
+
+    const {sortBy, sortedItems, sorts} = useSort(allProducts)
     const {go, page, currentPage} = usePagination({data: sortedItems, pageSize})
     const [hover, setHover] = useState(null)
 
@@ -29,13 +40,19 @@ export const ProductsTable = withDatabaseNode(({value, isLoading}) => {
         <div className={c(styles.background, styles.height)}>
             <Title columns={columns} onClick={sortBy} sorts={sorts} hovered={hover}/>
             <div onMouseLeave={() => setHover(null)} className={styles.padding}>{
-                isLoading || !page
+                isNewProductsLoading || isProductsLoading || !page
                     ? <Flex justifyContent="center" alignItems="center" height="30vh"><Spin size="large"/></Flex>
                     : (
                         <ul className={c(isDesktop && styles.line)}>
                             {page.map((datum) => (
                                 <li key={'key' + datum.id}>
                                     <Item data={datum} onElementHover={setHover}/>
+                                    {datum.new === 1 && (
+                                        <>
+                                            <Button type="primary" style={{marginLeft: '1rem'}} onClick={() => moveProduct(datum)}>APPROVE</Button>
+                                            <Button danger style={{marginLeft: '1rem'}} onClick={() => removeProduct(datum)}>DELETE</Button>
+                                        </>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -46,4 +63,4 @@ export const ProductsTable = withDatabaseNode(({value, isLoading}) => {
             </div>
         </div>
     )
-})
+}
