@@ -9,7 +9,6 @@ export const MobileRow = ({data}) => (
     <Flex alignItems="center" className={c(styles.card, data.new && styles.new)}>
         <Flex minWidth="auto" flexWrap="nowrap" flexDirection="column" marginRight="1rem">
             <ImageDisplay url={data.image}/>
-            <Cell rating="567" size="big" text="#12327" center/>
         </Flex>
         <Flex flex="1" justifyContent="center">
             <Flex flex="1" flexDirection="column">

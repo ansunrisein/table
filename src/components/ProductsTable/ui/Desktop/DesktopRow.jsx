@@ -12,7 +12,6 @@ export const DesktopRow = ({data, onElementHover}) => (
               padding="0.5rem 0"
         >
             <ImageDisplay url={data.image} className={styles.image}/>
-            <Cell rating="567" size="big" text="#12327"/>
         </Flex>
         <Flex flex="1" justifyContent="center" alignItems="center" onMouseEnter={() => onElementHover?.('name')}
               className={styles.hover}>
