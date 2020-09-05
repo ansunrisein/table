@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useMedia} from 'react-use'
-import {Box, Flex} from 'reflexbox'
+import {Flex} from 'reflexbox'
 import {Auth, Form, ProductsTable} from '../components'
 import {withFirebaseAuthConsumer} from '../hocs'
 
