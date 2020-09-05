@@ -11,7 +11,7 @@ export const TitleDesktopRow = ({columns, sorts, onClick, hovered}) => {
         <Flex className={styles.background}>{
             columns.map((e, i) => (
                 <Box key={i} flex="1">
-                    <Title text={e} sort={findDirection(e)} onClick={() => onClick(e)} hovered={hovered === e}/>
+                    <Title text={e === 'image' ? 'design' : e} sort={findDirection(e)} onClick={() => onClick(e)} hovered={hovered === e}/>
                 </Box>
             ))
         }</Flex>

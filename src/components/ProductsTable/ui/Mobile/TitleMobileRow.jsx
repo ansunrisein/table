@@ -30,7 +30,7 @@ export const TitleMobileRow = ({columns, onClick}) => {
                 columns.map((e, i) => (
                     <Flex as="li" key={i} width="100%" justifyContent="center" className={styles.hover}>
                         <Flex justifyContent="flex-start" onClick={() => sort(e)} className={styles.item}>
-                            <span className={c(styles.text, styles.sort)}>{e}</span>
+                            <span className={c(styles.text, styles.sort)}>{e === 'image' ? 'design' : e}</span>
                         </Flex>
                     </Flex>
                 ))
