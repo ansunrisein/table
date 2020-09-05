@@ -36,7 +36,7 @@ export const DesktopRow = ({data, onElementHover}) => (
         </Flex>
         <Flex flex="1" justifyContent="center" alignItems="center" onMouseEnter={() => onElementHover?.('ingredients')}
               className={styles.hover}>
-            <Cell rating="23" horizontal>
+            <Cell rating="23">
                 <span className={styles.ingredients}>{data.ingredients}</span>
             </Cell>
         </Flex>

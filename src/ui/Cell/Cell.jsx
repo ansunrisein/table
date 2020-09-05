@@ -14,8 +14,8 @@ export const Cell = ({text, horizontal, rating, size, children, onMouseEnter, on
     >
         {text &&
         <span className={c(styles.medium, styles.gray, size === 'tiny' && styles.small, styles.ellipsis)}>{text}</span>}
-        <Rating rating={rating} size={size}/>
         {children}
+        <Rating rating={rating} size={size}/>
     </Flex>
 )
 
