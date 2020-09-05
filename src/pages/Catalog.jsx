@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
+import {useMedia} from 'react-use'
+import {Box, Flex} from 'reflexbox'
 import {Auth, Form, ProductsTable} from '../components'
 import {withFirebaseAuthConsumer} from '../hocs'
-import {useMedia} from 'react-use'
 
 
 export const Catalog = withFirebaseAuthConsumer(({isSignedIn}) => {
@@ -16,8 +17,10 @@ export const Catalog = withFirebaseAuthConsumer(({isSignedIn}) => {
         return (
             <>
                 {isSignedIn && visible && <Form showForm={setVisible}/>}
-                <ProductsTable/>
-                <Auth showForm={setVisible} setAuth={setAuth} authed={authed}/>
+                <Flex flexDirection="column" alignItems="center">
+                        <ProductsTable/>
+                        <Auth showForm={setVisible} setAuth={setAuth} authed={authed}/>
+                </Flex>
             </>
         )
 

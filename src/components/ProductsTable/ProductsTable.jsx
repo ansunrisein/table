@@ -37,7 +37,7 @@ export const ProductsTable = () => {
     const Title = useMemo(() => (isDesktop ? TitleDesktopRow : TitleMobileRow), [isDesktop])
 
     return (
-        <div className={c(styles.background, styles.height)}>
+        <div className={c(styles.background, styles.size)}>
             <Title columns={columns} onClick={sortBy} sorts={sorts} hovered={hover}/>
             <div onMouseLeave={() => setHover(null)} className={styles.padding}>{
                 isNewProductsLoading || isProductsLoading || !page
@@ -49,8 +49,10 @@ export const ProductsTable = () => {
                                     <Item data={datum} onElementHover={setHover}/>
                                     {datum.new === 1 && (
                                         <>
-                                            <Button type="primary" style={{marginLeft: '1rem'}} onClick={() => moveProduct(datum)}>APPROVE</Button>
-                                            <Button danger style={{marginLeft: '1rem'}} onClick={() => removeProduct(datum)}>DELETE</Button>
+                                            <Button type="primary" style={{marginLeft: '1rem'}}
+                                                    onClick={() => moveProduct(datum)}>APPROVE</Button>
+                                            <Button danger style={{marginLeft: '1rem'}}
+                                                    onClick={() => removeProduct(datum)}>DELETE</Button>
                                         </>
                                     )}
                                 </li>

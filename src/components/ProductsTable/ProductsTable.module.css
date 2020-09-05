@@ -1,5 +1,6 @@
-.height {
+.size {
     min-height: 100vh;
+    width: 80vw;
     padding-bottom: 3rem;
 }
 
@@ -29,5 +30,9 @@
 @media (max-width: 768px) {
     .pagination {
         margin: 0 1rem 1rem 0;
+    }
+
+    .size {
+        width: 100vw;
     }
 }
